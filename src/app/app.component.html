@@ -1,0 +1,70 @@
+<!-- Toolbar -->
+<div class="toolbar fixed-top" role="banner" style="z-index: 1005;">
+  <svg width="45" height="45" viewBox="0 0 16 16" class="bi bi-exclamation-triangle-fill" fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg" style="margin: 16px;color:rgb(255, 0, 0);">
+    <path fill-rule="evenodd"
+      d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 5zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+  </svg>
+  <span>Olmatix</span>
+  <div class="spacer"></div>
+  <a aria-label="Angular on twitter" title="Disconnected" class="text-white">
+    <svg *ngIf="connected == false" width="25" height="25" viewBox="0 0 16 16" class="bi bi-cloud-slash-fill"
+      fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd"
+        d="M3.112 5.112a3.125 3.125 0 0 0-.17.613C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13H11L3.112 5.112zm11.372 7.372L4.937 2.937A5.512 5.512 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773a3.2 3.2 0 0 1-1.516 2.711zm-.838 1.87l-12-12 .708-.708 12 12-.707.707z" />
+    </svg>
+  </a>
+  <a aria-label="Angular on twitter" title="Connected" class="text-white">
+    <svg *ngIf="connected == true" width="25" height="25" viewBox="0 0 16 16" class="bi bi-cloud-fill"
+      fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd"
+        d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z" />
+    </svg>
+  </a>
+
+  <a aria-label="Angular on twitter" title="Help" class="text-white ml-3" (click)="open(content)">
+    <svg width="25" height="25" viewBox="0 0 16 16" class="bi bi-cloud-fill" fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd"
+        d="M9.05.435c-.58-.58-1.52-.58-2.1 0L.436 6.95c-.58.58-.58 1.519 0 2.098l6.516 6.516c.58.58 1.519.58 2.098 0l6.516-6.516c.58-.58.58-1.519 0-2.098L9.05.435zM6.57 6.033H5.25C5.22 4.147 6.68 3.5 8.006 3.5c1.397 0 2.673.73 2.673 2.24 0 1.08-.635 1.594-1.244 2.057-.737.559-1.01.768-1.01 1.486v.355H7.117l-.007-.463c-.038-.927.495-1.498 1.168-1.987.59-.444.965-.736.965-1.371 0-.825-.628-1.168-1.314-1.168-.901 0-1.358.603-1.358 1.384zm1.251 6.443c-.584 0-1.009-.394-1.009-.927 0-.552.425-.94 1.01-.94.609 0 1.028.388 1.028.94 0 .533-.42.927-1.029.927z" />
+
+    </svg>
+  </a>
+
+  <a aria-label="Angular on twitter" title="Exit">
+
+    <svg width="35" height="35" viewBox="0 0 16 16" class="bi bi-power" fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg" style="margin: 16px;color:white;" (click)="appExit()">
+      <path fill-rule="evenodd" d="M5.578 4.437a5 5 0 1 0 4.922.044l.5-.866a6 6 0 1 1-5.908-.053l.486.875z" />
+      <path fill-rule="evenodd" d="M7.5 8V1h1v7h-1z" />
+    </svg>
+  </a>
+</div>
+<router-outlet></router-outlet>
+
+<!-- Modal -->
+<ng-template #content let-modal>
+  <div class="modal-header container">
+    <h4 class="modal-title" id="modal-basic-title">About</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <h4>What is this app about?</h4>
+    <div class="flex-container">
+      <p>This App will receive <b>Panic Button Notification</b> if pressed from <i>Olmatix Panic Button Device or from
+          any other Olmatix Panic Button app</i>.
+        <br>
+        Enter <b style="color: red;">Your ID</b>, Location and GPS coordinate in Olmatix Panic Button device.
+        <br>
+        Or you can enter <b>other App ID</b> from different handphone at the <b style="color: red;">+ button</b>.</p>
+    </div>
+    <div class="d-flex justify-content-center">
+      <img class="card shadow" src="/assets/pbsmall.png" alt="" style="width: 75%;">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark btn-sm" (click)="modal.dismiss('Save click')">Ok</button>
+  </div>
+</ng-template>

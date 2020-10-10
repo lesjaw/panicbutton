@@ -1,0 +1,13 @@
+{
+  "appId": "com.lesjaw.panic",
+  "appName": "PanicButton",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/panicbutton",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

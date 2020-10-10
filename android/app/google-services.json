@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "637474839316",
+    "firebase_url": "https://panic-button-23b4c.firebaseio.com",
+    "project_id": "panic-button-23b4c",
+    "storage_bucket": "panic-button-23b4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637474839316:android:1db78dab2002e706f24001",
+        "android_client_info": {
+          "package_name": "com.lesjaw.panic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637474839316-1uc7lnel1j5f5h2c32bjcqjvc5ejf3mg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLyU_vDxv4KzgTxjCD4t8pDHbvgMrCHEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "637474839316-1uc7lnel1j5f5h2c32bjcqjvc5ejf3mg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
